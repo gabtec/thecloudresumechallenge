@@ -32,18 +32,21 @@ Having this in consideration,
 I structured my project in 3 main parts,
 each one with it's own terraform IaC code.
 
-- my_project
-  |-- + backend
-  |....|-- + api/
-  |....|-- + terraform/
-  |-- + frontend
-  |....|-- + website/
-  |....|-- + terraform/
-  |-- + network
-  |...|-- + a_setup_domain/
-  |...|....|-- + terraform/
-  |...|-- + b_setup_cdn/
-  |...|....|-- + terraform/
+```sh
+.
+└── my_project/
+  ├── backend/
+  │ ├── api
+  │ └── terraform
+  ├── frontend/
+  │ ├── website
+  │ └── terraform
+  └── network/
+  ├── a_setup_domain/
+  │ └── terraform
+  └── b_setup_cdn/
+  └── terraform
+```
 
 ### Getting Started
 
@@ -214,6 +217,6 @@ $ dns-sd -G v4 <my-domain.com>
 
 There are still some improvements to make:
 
-:hammer: - point a subdomain like "api.gabtec.fun" to api gateway
-:hammer: - generate certificate with terraform
-:hammer: - continue learning...
+- :hammer: point a subdomain like "api.gabtec.fun" to api gateway
+- :hammer: generate certificate with terraform
+- :hammer: continue learning...
