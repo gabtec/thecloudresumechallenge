@@ -1,0 +1,36 @@
+name: 'Test_And_Deploy'
+
+on:
+  workflow_dispatch:
+  # push:
+  #   branches: [ "main" ]
+  # pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: 'Test'
+    runs-on: ubuntu-latest
+    environment: production
+
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      # Checkout the repository to the GitHub Actions runner
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      # Run frontend tests
+      - name: Testing FE
+        run: tests/front/before-tests.sh && test-front.sh
+      # Run backend tests
+      - name: Testing BE
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: 'npm'
+      - run: node tests/back/test-back.js
