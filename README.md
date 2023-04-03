@@ -20,6 +20,18 @@ If you're planning to see how I solve this challenge, and are willing to follow 
 - AWS
 - Javascript and NodeJS
 
+## Pre-Condition
+
+Have a domain name registered
+In my case I registered at dominios.pt
+
+I used Terraform to create a Route53 DNS zone, to manage it.
+This gives me 4 nameservers, that I used to setup my domain register at dominios.pt.
+
+I need this setup and working, in order to be able to validate certificates with DNS challenge.
+
+Also, this is a one time setup. No need to change it.
+
 ### Strategy
 
 I decided to brake the challenge in separate deployable parts.
@@ -47,6 +59,11 @@ each one with it's own terraform IaC code.
   └── b_setup_cdn/
   └── terraform
 ```
+
+### Repo Branches
+
+v1 - first working version with some manual steps
+v2 - using terraform modules
 
 ### Getting Started
 
@@ -86,9 +103,9 @@ No we can use this crdentials in terraform aws provider:
 
 ```tf
 provider "aws" {
-  region = "us-west-1"                             # replace with yours
-  profile = "my-aws-profile"                       # replace with yours
-  shared_credentials_files = ["~/.aws/credentials] # replace with yours
+  region = "us-west-1"                              # replace with yours
+  profile = "my-aws-profile"                        # replace with yours
+  shared_credentials_files = ["~/.aws/credentials"] # replace with yours
 }
 ```
 
