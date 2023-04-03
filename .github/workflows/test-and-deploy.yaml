@@ -2,8 +2,8 @@ name: 'Test_And_Deploy'
 
 on:
   workflow_dispatch:
-  # push:
-  #   branches: [ "main" ]
+  push:
+    branches: ['v2']
   # pull_request:
 
 permissions:
