@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo "--- Results: ---"
+echo "---- Results: ----"
 if [ "one" = "one" ]; then
   echo "[√] PASS"
   exit 0
