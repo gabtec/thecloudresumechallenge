@@ -7,7 +7,7 @@ expected=$(echo "<h4>The Cloud Resume Challenge</h4> <h4>Number of page visits: 
 # echo $fileContent
 
 echo "--- Results: ---"
-if [ "$fileContent" == "$expected" ]; then
+if [ "$fileContent" = "$expected" ]; then
   echo "[√] PASS"
   exit 0
 else
