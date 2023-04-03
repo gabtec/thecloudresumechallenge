@@ -86,9 +86,9 @@ No we can use this crdentials in terraform aws provider:
 
 ```tf
 provider "aws" {
-  region = "us-west-1"                             # replace with yours
-  profile = "my-aws-profile"                       # replace with yours
-  shared_credentials_files = ["~/.aws/credentials] # replace with yours
+  region = "us-west-1"                              # replace with yours
+  profile = "my-aws-profile"                        # replace with yours
+  shared_credentials_files = ["~/.aws/credentials"] # replace with yours
 }
 ```
 
