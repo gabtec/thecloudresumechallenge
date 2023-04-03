@@ -28,12 +28,13 @@ jobs:
       - name: Testing FE
         run: tests/front/before-tests.sh && tests/front/test-front.sh
       # Run backend tests
+      # - name: Testing BE
+      #   uses: actions/setup-node@v3
+      #   with:
+      #     node-version: 18.x
+      #     cache: 'npm'
       - name: Testing BE
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18.x
-          cache: 'npm'
-      - run: node tests/back/test-back.js
+        run: tests/back/test-back.sh
   # infra:
   #   # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
   #   - name: Setup Terraform
