@@ -1,0 +1,11 @@
+:root {
+  --aws-color: #ec7211;
+  --azu-color: #007fff;
+  --gcp-color: blue;
+  --oci-color: rgb(177, 29, 29);
+}
+
+body {
+  /* background-color: var(--azu-color); */
+  background-color: var(--aws-color);
+}
