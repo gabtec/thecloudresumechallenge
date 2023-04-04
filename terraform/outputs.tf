@@ -21,3 +21,10 @@ output "bucket_url" {
 output "bucket_regional_name" {
   value = module.frontend.bucket_regional_name
 }
+
+# -----------------------------------
+# Module: Network
+# -----------------------------------
+output "zone-id" {
+  value = module.network-cdn.my-zone-id
+}

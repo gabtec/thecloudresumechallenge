@@ -21,15 +21,15 @@ resource "aws_dynamodb_table" "t_visits" {
 # --------------------------------------------
 # Seed 1st and only row
 # --------------------------------------------
-resource "aws_dynamodb_table_item" "seed" {
-  table_name = aws_dynamodb_table.t_visits.name
-  hash_key   = aws_dynamodb_table.t_visits.hash_key
+# resource "aws_dynamodb_table_item" "seed" {
+#   table_name = aws_dynamodb_table.t_visits.name
+#   hash_key   = aws_dynamodb_table.t_visits.hash_key
 
-  item = <<ITEM
-{
-  "id": {"S": "gabtec.fun"},
-  "visitsCount": {"N": "100"}
-}
-ITEM
+#   item = <<ITEM
+# {
+#   "id": {"S": "gabtec.fun"},
+#   "visitsCount": {"N": "100"}
+# }
+# ITEM
 
-}
+# }

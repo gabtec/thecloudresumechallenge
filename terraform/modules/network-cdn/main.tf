@@ -14,7 +14,8 @@ terraform {
 # -----------------------------------
 resource "aws_route53_record" "www" {
   provider = aws.oem
-  zone_id  = var.ROUTE53_ZONE_ID
+  # zone_id  = var.ROUTE53_ZONE_ID
+  zone_id  = data.aws_route53_zone.my-zone.zone_id
   name     = "www.gabtec.fun"
   type     = "A"
 
@@ -112,7 +113,7 @@ resource "aws_cloudfront_distribution" "b_cdn" {
   default_cache_behavior {
     viewer_protocol_policy = "redirect-to-https" # opts: "allow-all" | "https-only" | "redirect-to-https"
     target_origin_id       = var.BUCKET_WEBSITE_URL
-    default_ttl            = 3600
+    default_ttl            = 0 #3600
 
     # methods that will be forwarded to S3 bucket (1 of 3 options)
     # allowed_methods  = ["HEAD", "GET", "OPTIONS"]

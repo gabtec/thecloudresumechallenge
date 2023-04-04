@@ -1,5 +1,5 @@
 (async function () {
-  const apiUrl = `${apiBaseUrl}/visits`;
+  const apiUrl = `https://ex09fxwzh5.execute-api.eu-west-1.amazonaws.com/api_stage_learning/visits`;
 
   const display = document.querySelector('#vcounter');
 

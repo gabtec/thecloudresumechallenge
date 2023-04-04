@@ -56,5 +56,5 @@ module "network-cdn" {
   BUCKET_WEBSITE_URL   = split("//", module.frontend.bucket_url)[1]
   BUCKET_REGIONAL_NAME = module.frontend.bucket_regional_name
   CDN_IN_COUNTRIES     = ["PT"]
-  ROUTE53_ZONE_ID      = var.ROUTE53_ZONE_ID
+  # ROUTE53_ZONE_ID      = var.ROUTE53_ZONE_ID
 }

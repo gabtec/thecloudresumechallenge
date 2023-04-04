@@ -21,7 +21,7 @@ variable "MY_TAG" {
   default = "gabtec"
 }
 
-variable "ROUTE53_ZONE_ID" {
-  type    = string
-  default = ""
-}
+# variable "ROUTE53_ZONE_ID" {
+#   type    = string
+#   default = ""
+# }

@@ -53,14 +53,25 @@ resource "aws_s3_bucket_versioning" "b_versions_off" {
 
 # --------------------------------------------
 # Config S3 Bucket files encryption
+# by default aws uses sse_algorithm = "AES256"
 # --------------------------------------------
-resource "aws_s3_bucket_server_side_encryption_configuration" "b_crypto" {
-  bucket = aws_s3_bucket.b.id
+# resource "aws_s3_bucket_server_side_encryption_configuration" "b_crypto" {
+#   bucket = aws_s3_bucket.b.id
 
-  rule {
-    bucket_key_enabled = false
-  }
-}
+#   rule {
+#     bucket_key_enabled = false
+#   }
+# }
+
+  # resource "aws_s3_bucket_server_side_encryption_configuration" "b_crypto" {
+  #     - rule {
+  #         - bucket_key_enabled = false -> null
+
+  #         - apply_server_side_encryption_by_default {
+  #             - sse_algorithm = "AES256" -> null
+  #           }
+  #       }
+  #   }
 
 # --------------------------------------------
 # Upload files to S3 Bucket
